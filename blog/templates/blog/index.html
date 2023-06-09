@@ -6,19 +6,15 @@
 {% endblock%}
 
 {% block css_files %}
+    <link rel="stylesheet" href="blog/post.css">
     <link rel="stylesheet" href="{% static 'blog/index.css' %}"/>
 {% endblock %}
 
 {% block content %}
-    <header id="main-navigation">
-        <h1><a href="">Noah's Blog</a></h1>
-        <nav>
-            <a href="">All Posts</a>
-        </nav>
-    </header>
+
     <section id="welcome">
         <header>
-            <img src="" alt="Noah - The Auther of this Blog">
+            <img src="{% static 'blog/images/Me.jpeg' %}" alt='Noah - The Auther of this Blog'>
             <h2>NOAH'S BLOG</h2>
         </header>
         <p>Hi, I am Noah and I love to program</p>
@@ -27,17 +23,7 @@
     <section id="latest-posts">
         <h2>My Latest Thoughts</h2>
         <ul>
-            <li>
-                <article class="post">
-                    <a href="">
-                        <img src="" alt="First post name">
-                        <div class="post_content">
-                            <h3>Mountain Hiking</h3>
-                            <p>Views while hiking are great</p>
-                        </div>
-                    </a>
-                </article>
-            </li>
+            {% include 'blog/includes/post.html'%}
         </ul>
     </section>
     <section id="about">
