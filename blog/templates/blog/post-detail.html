@@ -21,9 +21,18 @@
     {% endif %}
     <section id='summary'>
         <h2>{{ post.title }}</h2>
-        <div>{% for tag in post_tags %}
-            <span class='tag'>{{ tag.caption }}</span>
-            {% endfor %}</div>
+        <div>
+            {% for tag in post_tags %}
+                <span class='tag'>{{ tag.caption }}</span>
+            {% endfor %}
+        </div>
+        <div id="read-later">
+            <form action="{% url "read-later" %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ post.id }}" name="post_id">
+                <button>Read Later</button>
+            </form>
+        </div>
         <article>
             <img src="{{ post.image.url }}" alt="{{ post.title }}">
             <address>By <a href="mailto:{{ post.author.email_address }}">{{ post.author }}</a></address>
