@@ -56,21 +56,21 @@ WSGI stands for Web Server Gateway Interface. It is standard interface that stan
 - I added the required packages needed to this environment with pip.
 - The benifit of using the virtual environment is that only the packages downloaded for the project are available.
 - Now, I ran python3 -m freeze \> requirements.txt. This conveniently created a text file outlining the dependencies of the project.
-- See Picture 19: Admin Login for the final product's admin page, which can only be accessed by port 8088, and Picture 18: Blog Index Page for the final blog site, which is accessed by port 80.
+- See [Picture 19: Admin Login](#picture19) for the final product's admin page, which can only be accessed by port 8088, and [Picture 18: Blog Index Page](#picture18) for the final blog site, which is accessed by port 80.
   - During the presentation, my admin page would not load. I discovered that this was due to a setting in my settings.py file called 'CSRF\_TRUSTED\_ORIGINS.' I am not sure, however, why it worked the day before, and then stopped working for the presentation.
-  - From this Admin page, the content can be managed (Picture 14: Admin Page Overview, Picture 15: Admin Page View for Single Table).
-  - Also see Picture 20: Admin Denied Access Through Port 80 and Picture 21: Site Denied Access Through Port 8088
+  - From this Admin page, the content can be managed ([Picture 14: Admin Page Overview](#picture14), [Picture 15: Admin Page View for Single Table](#picture15)).
+  - Also see [Picture 20: Admin Denied Access Through Port 80](#picture20) and [Picture 21: Site Denied Access Through Port 8088](#picture21)
 
 ## Ubuntu
 
-- Created an EC2 instance in AWS with the following settings (Picture 1: Ubuntu AWS initialization):
+- Created an EC2 instance in AWS with the following settings ([Picture 1: Ubuntu AWS initialization](#picture1)):
   - Ubuntu 22.04
   - 25 GB storage
   - micro instance type
   - SSH, HTTP, HTTPS traffic allowed
 - Connected to instance with the following command:
   - ssh -i "my\_web\_server\_secret\_key.pem" ubuntu@ec2-44-208-26-70.compute-1.amazonaws.com
-- Created a new key pair for the user I will add with the following command on the client (Picture 5: New RSA Key):
+- Created a new key pair for the user I will add with the following command on the client ([Picture 5: New RSA Key](#picture5)):
   - ssh-keygen
 - In the Linux terminal, I created a new user with the following command:
   - sudo adduser nsyler, then entered the password and other information for the user
@@ -84,7 +84,7 @@ WSGI stands for Web Server Gateway Interface. It is standard interface that stan
   - touch .ssh/authorized\_keys
   - vi .ssh/authorized\_keys
 - I then pasted my public rsa key, hit esc, the :wq to write and quit.
-- After doing this, I opened another terminal on the client, and tested the connection (Picture 2: Initial Ubuntu Connection).
+- After doing this, I opened another terminal on the client, and tested the connection ([Picture 2: Initial Ubuntu Connection](#picture2)).
   - ssh -i id\_rsa nsyler@44.208.26.70
 - It worked, so I exited out of the other terminal.
 
@@ -121,7 +121,7 @@ WSGI stands for Web Server Gateway Interface. It is standard interface that stan
   - deactivate
 - Created a systemd socket to listen and start Gunicorn when needed.
   - sudo nano /etc/systemd/system/gunicorn.socket
-- Set up the configuration for the Gunicorn socket (Picture 3: Gunicorn Config)
+- Set up the configuration for the Gunicorn socket ([Picture 3: Gunicorn Config](#picture3))
   - sudo vi /etc/systemd/system/gunicorn.service
 - Verified the socket file was able to start:
   - sudo systemctl status gunicorn.socket
@@ -137,18 +137,18 @@ WSGI stands for Web Server Gateway Interface. It is standard interface that stan
   - sudo systemctl daemon-reload
   - sudo systemctl restart gunicorn
 
-- Next, I needed to configure Nginx to be able to pass requests to Gunicorn (Picture 4: Nginx Config).
+- Next, I needed to configure Nginx to be able to pass requests to Gunicorn ([Picture 4: Nginx Config](#picture4)).
   - sudo vi /etc/nginx/sites-available/my\_site
   - sudo ufw delete allow 8000
   - sudo ufw allow 'Nginx Full'
 - I was able to check Nginx for errors with the following command:
   - sudo tail -F /var/log/nginx/error.log
-- The folder holding the application root directory and virtual environment root directory is django\_site. The application root directory is stored at ~/home/nsyler/django\_site/my\_site (Picture 9: Application Directory and Nginx var logs)
-- The access log files for Nginx can be viewed at /var/log/nginx/access.log (Picture 9: Application Directory and Nginx var logs)
-- The error log files for Nginx can be viewed at /var/log/nginx/error.log (Picture 9: Application Directory and Nginx var logs)
-- The Nginx process logs can be viewed with journalctl -u nginx (Picture 10: Gunicorn and Nginx Process Logs)
-- The application logs for gunicorn can be viewed with journalctl -u gunicorn (Picture 10: Gunicorn and Nginx Process Logs)
-- The socket logs for gunicorn can be viewed with journalctl -u gunicorn.socket (Picture 11: Gunicorn Socket Logs)
+- The folder holding the application root directory and virtual environment root directory is django\_site. The application root directory is stored at ~/home/nsyler/django\_site/my\_site ([Picture 9: Application Directory and Nginx var logs](#picture9))
+- The access log files for Nginx can be viewed at /var/log/nginx/access.log ([Picture 9: Application Directory and Nginx var logs](#picture9))
+- The error log files for Nginx can be viewed at /var/log/nginx/error.log ([Picture 9: Application Directory and Nginx var logs](#picture9))
+- The Nginx process logs can be viewed with journalctl -u nginx ([Picture 10: Gunicorn and Nginx Process Logs](#picture10))
+- The application logs for gunicorn can be viewed with journalctl -u gunicorn ([Picture 10: Gunicorn and Nginx Process Logs](#picture10))
+- The socket logs for gunicorn can be viewed with journalctl -u gunicorn.socket ([Picture 11: Gunicorn Socket Logs](#picture11))
 
 ## MySQL
 
@@ -158,7 +158,7 @@ WSGI stands for Web Server Gateway Interface. It is standard interface that stan
   - mysql —version to check the installation
 
 - I then created the database in Amazon RDS (Relational Database Services).
-  - The options for this are located my default RDS options group (Picture 12: MySQL Options).
+  - The options for this are located my default RDS options group ([Picture 12: MySQL Options](#picture12)).
 - This allowed me to configure parts of the remote database before launching it, including adding an administrative user. However, If someone would like to add an administrator with AWS doing it for them, they could use the following command:
   - CREATE USER 'new\_user'@'localhost' IDENTIFIED BY 'password';
 - I would use [https://dev.mysql.com/doc/refman/8.0/en/creating-accounts.html](https://dev.mysql.com/doc/refman/8.0/en/creating-accounts.html) for further information.
@@ -166,91 +166,91 @@ WSGI stands for Web Server Gateway Interface. It is standard interface that stan
 - Connected to the MySQL database, and adding a database for the application:
   - mysql -h mysql-dbms.crcyl8xm8erl.us-east-1.rds.amazonaws.com -P 3306 -u adminnsyler -p
   - CREATE DATABASE Blog
-- From here, running python3 manage.py makemigrations and python3 manage.py migrate added my designed schema for this app to the database, after setting my hooks in the app's configuration (Picture 13: Models Displaying Schema Configuration).
-- The easiest way to start and stop this MySQL Remote Database is through the RDS menu in AWS (Picture 16: AWS MySQL).
-- MySQL login, users, and schema snippet: Picture 17: MySQL Info
+- From here, running python3 manage.py makemigrations and python3 manage.py migrate added my designed schema for this app to the database, after setting my hooks in the app's configuration ([Picture 13: Models Displaying Schema Configuration](#picture13)).
+- The easiest way to start and stop this MySQL Remote Database is through the RDS menu in AWS ([Picture 16: AWS MySQL](#picture16)).
+- MySQL login, users, and schema snippet: [Picture 17: MySQL Info](#picture17)
 
-![Picture1](https://github.com/NoahSyler/blog/assets/99105291/ec051bd1-3991-454a-9de8-6949cef38bcb)
+<a name='picture1'>![Picture1](https://github.com/NoahSyler/blog/assets/99105291/ec051bd1-3991-454a-9de8-6949cef38bcb)</a>
 
 _Picture 1: Ubuntu AWS initialization_
 
-![Picture2](https://github.com/NoahSyler/blog/assets/99105291/e808f5d4-12fa-42f2-99a6-835f75382e2a)
+<a name='picture2'>![Picture2](https://github.com/NoahSyler/blog/assets/99105291/e808f5d4-12fa-42f2-99a6-835f75382e2a)</a>
 
 _Picture 2: Initial Ubuntu Connection_
 
-![Picture3](https://github.com/NoahSyler/blog/assets/99105291/179d5457-ae73-4ae9-97fd-5408bdcdf91e)
+<a name='picture4'>![Picture3](https://github.com/NoahSyler/blog/assets/99105291/179d5457-ae73-4ae9-97fd-5408bdcdf91e)</a>
 
 _Picture 3: Gunicorn Config_
 
-![Picture4](https://github.com/NoahSyler/blog/assets/99105291/4fab86b9-6b4d-41f9-8957-685bea089ac5)
+<a name='picture4'>![Picture4](https://github.com/NoahSyler/blog/assets/99105291/4fab86b9-6b4d-41f9-8957-685bea089ac5)</a>
 
 _Picture 4: Nginx Config_
 
-![Picture5](https://github.com/NoahSyler/blog/assets/99105291/2afaa198-680b-4f47-b205-0bc3536cfde8)
+<a name='picture5'>![Picture5](https://github.com/NoahSyler/blog/assets/99105291/2afaa198-680b-4f47-b205-0bc3536cfde8)</a>
 
 _Picture 5: New RSA Key_
 
-![Picture6](https://github.com/NoahSyler/blog/assets/99105291/5f14d4ce-5e6f-4b57-8ce0-d967d3eabf7c)
+<a name='picture6'>![Picture6](https://github.com/NoahSyler/blog/assets/99105291/5f14d4ce-5e6f-4b57-8ce0-d967d3eabf7c)</a>
 
 _Picture 6: New User Ubuntu_
 
-![Picture7](https://github.com/NoahSyler/blog/assets/99105291/24568eb4-24c0-493a-a5f3-fd9b7d6b2144)
+<a name='picture7'>![Picture7](https://github.com/NoahSyler/blog/assets/99105291/24568eb4-24c0-493a-a5f3-fd9b7d6b2144)</a>
 
 _Picture 7: Public Key added to Ubuntu_
 
-![Picture8](https://github.com/NoahSyler/blog/assets/99105291/c4483ee4-279c-43a0-ad90-d823d264823e)
+<a name='picture8'>![Picture8](https://github.com/NoahSyler/blog/assets/99105291/c4483ee4-279c-43a0-ad90-d823d264823e)</a>
 
 _Picture 8: Uploading Program with SFTP_
 
-![Picture9](https://github.com/NoahSyler/blog/assets/99105291/947796e6-eb09-4d63-b96e-64736632ecee)
+<a name='picture9'>![Picture9](https://github.com/NoahSyler/blog/assets/99105291/947796e6-eb09-4d63-b96e-64736632ecee)</a>
 
 _Picture 9: Application Directory and Nginx var logs_
 
-![Picture10](https://github.com/NoahSyler/blog/assets/99105291/3160acb4-78dc-4968-b5f9-15c93fc10b6e)
+<a name='picture10'>![Picture10](https://github.com/NoahSyler/blog/assets/99105291/3160acb4-78dc-4968-b5f9-15c93fc10b6e)</a>
 
 _Picture 10: Gunicorn and Nginx Process Logs_
 
-![Picture11](https://github.com/NoahSyler/blog/assets/99105291/455d7f14-5bd8-4dda-a1c9-9ecbf6ec24d8)
+<a name='picture11'>![Picture11](https://github.com/NoahSyler/blog/assets/99105291/455d7f14-5bd8-4dda-a1c9-9ecbf6ec24d8)</a>
 
 _Picture 11: Gunicorn Socket Logs_
 
-![Picture12](https://github.com/NoahSyler/blog/assets/99105291/0c763f60-9787-4b9f-97dc-cf6f076e6b68)
+<a name='picture12'>![Picture12](https://github.com/NoahSyler/blog/assets/99105291/0c763f60-9787-4b9f-97dc-cf6f076e6b68)</a>
 
 _Picture 12: MySQL Options_
 
-![Picture13](https://github.com/NoahSyler/blog/assets/99105291/12a0e3fc-97bc-4df4-8eb1-3d4c72a1ae88)
+<a name='picture13'>![Picture13](https://github.com/NoahSyler/blog/assets/99105291/12a0e3fc-97bc-4df4-8eb1-3d4c72a1ae88)</a>
 
 _Picture 13: Models Displaying Schema Configuration_
 
-![Picture14](https://github.com/NoahSyler/blog/assets/99105291/807326aa-5bf4-4d73-9fac-a5bb31899775)
+<a name='picture14'>![Picture14](https://github.com/NoahSyler/blog/assets/99105291/807326aa-5bf4-4d73-9fac-a5bb31899775)</a>
 
 _Picture 14: Admin Page Overview_
 
-![Picture15](https://github.com/NoahSyler/blog/assets/99105291/ba39bd55-e037-4a8b-9166-c6c55b3f632e)
+<a name='picture15'>![Picture15](https://github.com/NoahSyler/blog/assets/99105291/ba39bd55-e037-4a8b-9166-c6c55b3f632e)</a>
 
 _Picture 15: Admin Page View for Single Table_
 
-![Picture16](https://github.com/NoahSyler/blog/assets/99105291/a7175916-3dc3-4258-b5a1-b2571fc96f11)
+<a name='picture16'>![Picture16](https://github.com/NoahSyler/blog/assets/99105291/a7175916-3dc3-4258-b5a1-b2571fc96f11)</a>
 
 _Picture 16: AWS MySQL_
 
-![Picture17](https://github.com/NoahSyler/blog/assets/99105291/b728e992-1f41-493e-b707-281c18ca8d7c)
+<a name='picture17'>![Picture17](https://github.com/NoahSyler/blog/assets/99105291/b728e992-1f41-493e-b707-281c18ca8d7c)</a>
 
 _Picture 17: MySQL Info_
 
-![Picture18](https://github.com/NoahSyler/blog/assets/99105291/67414c3a-025e-45d8-a902-4a12abe65fdd)
+<a name='picture18'>![Picture18](https://github.com/NoahSyler/blog/assets/99105291/67414c3a-025e-45d8-a902-4a12abe65fdd)</a>
 
 _Picture 18: Blog Index Page_
 
-![Picture19](https://github.com/NoahSyler/blog/assets/99105291/fbdd818b-eb00-471d-8d1b-bb3f9af3bf07)
+<a name='picture19'>![Picture19](https://github.com/NoahSyler/blog/assets/99105291/fbdd818b-eb00-471d-8d1b-bb3f9af3bf07)</a>
 
 _Picture 19: Admin Login_
 
-![Picture20](https://github.com/NoahSyler/blog/assets/99105291/75e80413-d5ad-4f9c-8b5d-03ee3b6fadc6)
+<a name='picture20'>![Picture20](https://github.com/NoahSyler/blog/assets/99105291/75e80413-d5ad-4f9c-8b5d-03ee3b6fadc6)</a>
 
 _Picture 20: Admin Denied Access Through Port 80_
 
-![Picture21](https://github.com/NoahSyler/blog/assets/99105291/b2343515-ab5e-4b5e-9f36-86d4fa3f742a)
+<a name='picture21'>![Picture21](https://github.com/NoahSyler/blog/assets/99105291/b2343515-ab5e-4b5e-9f36-86d4fa3f742a)</a>
 
 _Picture 21: Site Denied Access Through Port 8088_
 
