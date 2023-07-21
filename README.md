@@ -12,31 +12,29 @@ The purpose of this lab was to gain experience managing web and application serv
 
 # Table of Contents
 
-_**[Abstract 1](#_Toc138702610)**_
-
 [Abstract](#abstract)
 
-_**[Introduction 3](#_Toc138702611)**_
+[Introduction](#introduction)
 
-**[Web Server 3](#_Toc138702612)**
+- [Web Server](#web-server)
 
-**[Web Application Server 3](#_Toc138702613)**
+- [Web Application Server](#web-application-server)
 
-**[WSGI 3](#_Toc138702614)**
+- [WSGI](#wsgi)
 
-_**[Experimental Procedure 4](#_Toc138702615)**_
+[Experimental Procedure](#experimental-procedure)
 
-**[Prepping Django 4](#_Toc138702616)**
+- [Prepping Django](#prepping-django)
 
-**[Ubuntu 4](#_Toc138702617)**
+- [Ubuntu](#ubuntu)
 
-**[Configuring the Web and Application servers 5](#_Toc138702618)**
+- [Configuring the Web and Application Servers](#configuring-the-web-and-application-servers)
 
-**[MySQL 7](#_Toc138702619)**
+- [MySQL](#mysql)
 
-_**[Conclusion 19](#_Toc138702622)**_
+[Conclusion](#conclusion)
 
-_**[Works Cited 20](#_Toc138702623)**_
+[Works Cited](works-cited)
 
 # Introduction
 
@@ -95,7 +93,7 @@ WSGI stands for Web Server Gateway Interface. It is standard interface that stan
   - ssh -i id\_rsa nsyler@44.208.26.70
 - It worked, so I exited out of the other terminal.
 
-## Configuring the Web and Application servers
+## Configuring the Web and Application Servers
 
   - sudo apt-get update
   - sudo apt-get upgrade
