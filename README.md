@@ -258,13 +258,9 @@ _Picture 21: Site Denied Access Through Port 8088_
 
 The internet protocols have truly revolutionized how we connect to the world. The consistency the protocols bring allow users to receive information from around the world. By adhering the http or https protocol, client side browsers can make requests to various servers, and these servers are given tremendous flexibility in how they process the requests. All they have to do is send the response back via https. Whether they are serving static files as a simple webserver, or dynamic files as an application server, or efficiently spreading the load between a variety of different servers, clients and servers are able to communicate everywhere. This is an amazing feat.
 
-# Works Cited
+# <a name="works-cited">Works Cited</a>
 
 | [1] | Mozilla, "What is a web server?," MDN Web Docs, [Online]. Available: https://developer.mozilla.org/en-US/docs/Learn/Common\_questions/Web\_mechanics/What\_is\_a\_web\_server. [Accessed 26 June 2023]. |
 | --- | --- |
 | [2] | Real Python, "Web Applications & Frameworks," [Online]. Available: https://docs.python-guide.org/scenarios/web/. [Accessed 26 June 2023]. |
 
-
-
-
-[Abstract](#abstract)
