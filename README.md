@@ -1,10 +1,5 @@
-**This program was used in a lab for my server administration course. The following it a description of the source**
+###### This program was used in a lab for my server administration course. The following contains is my lab report, detailing how the server was launched.
 
-Note: the images are not present, and the links are broken. This will be fixed in the next commit.
-
-**Web Server Deployment**
-
-**Noah Syler**
 
 # Abstract
 
@@ -34,7 +29,7 @@ The purpose of this lab was to gain experience managing web and application serv
 
 [Conclusion](#conclusion)
 
-[Works Cited](works-cited)
+[Works Cited](#works-cited)
 
 # Introduction
 
