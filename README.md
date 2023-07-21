@@ -6,7 +6,7 @@ Note: the images are not present, and the links are broken. This will be fixed i
 
 **Noah Syler**
 
-# <a name="abstract">Abstract</a>
+# Abstract
 
 The purpose of this lab was to gain experience managing web and application servers, as well as the application's connection to database servers. This was accomplished by actually deploying a developing and deploying a website. In this case, and Ubuntu server was used, running as a AWS EC2 machine. On that Ubuntu server was an Nginx reverse proxy, which passed dynamic requests to Gunicorn (which stands for 'Green Unicorn,' often pronounced as 'G-Unicorn'). Nginx handled the static files on its own. Gunicorn ran the Django application that I wrote to handle the dynamic requests.
 
