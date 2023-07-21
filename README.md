@@ -6,13 +6,15 @@ Note: the images are not present, and the links are broken. This will be fixed i
 
 **Noah Syler**
 
-# Abstract
+# <a name="abstract">Abstract</a>
 
 The purpose of this lab was to gain experience managing web and application servers, as well as the application's connection to database servers. This was accomplished by actually deploying a developing and deploying a website. In this case, and Ubuntu server was used, running as a AWS EC2 machine. On that Ubuntu server was an Nginx reverse proxy, which passed dynamic requests to Gunicorn (which stands for 'Green Unicorn,' often pronounced as 'G-Unicorn'). Nginx handled the static files on its own. Gunicorn ran the Django application that I wrote to handle the dynamic requests.
 
 # Table of Contents
 
 _**[Abstract 1](#_Toc138702610)**_
+
+[Abstract](#abstract)
 
 _**[Introduction 3](#_Toc138702611)**_
 
@@ -175,87 +177,87 @@ WSGI stands for Web Server Gateway Interface. It is standard interface that stan
 - The easiest way to start and stop this MySQL Remote Database is through the RDS menu in AWS (Picture 16: AWS MySQL).
 - MySQL login, users, and schema snippet: Picture 17: MySQL Info
 
-![](RackMultipart20230721-1-vmnkbr_html_dfb5c81a7775c4e3.png)
+![Picture1](https://github.com/NoahSyler/blog/assets/99105291/ec051bd1-3991-454a-9de8-6949cef38bcb)
 
 _Picture 1: Ubuntu AWS initialization_
 
-![](RackMultipart20230721-1-vmnkbr_html_9af81c901f1c3145.png)
+![Picture2](https://github.com/NoahSyler/blog/assets/99105291/e808f5d4-12fa-42f2-99a6-835f75382e2a)
 
 _Picture 2: Initial Ubuntu Connection_
 
-![](RackMultipart20230721-1-vmnkbr_html_72493faaf539e8a1.png)
+![Picture3](https://github.com/NoahSyler/blog/assets/99105291/179d5457-ae73-4ae9-97fd-5408bdcdf91e)
 
 _Picture 3: Gunicorn Config_
 
-![](RackMultipart20230721-1-vmnkbr_html_6e594e6bdf86dafb.png)
+![Picture4](https://github.com/NoahSyler/blog/assets/99105291/4fab86b9-6b4d-41f9-8957-685bea089ac5)
 
 _Picture 4: Nginx Config_
 
-![](RackMultipart20230721-1-vmnkbr_html_4b16a6ef3cb04033.png)
+![Picture5](https://github.com/NoahSyler/blog/assets/99105291/2afaa198-680b-4f47-b205-0bc3536cfde8)
 
 _Picture 5: New RSA Key_
 
-![](RackMultipart20230721-1-vmnkbr_html_4a96b7d26785cc28.png)
+![Picture6](https://github.com/NoahSyler/blog/assets/99105291/5f14d4ce-5e6f-4b57-8ce0-d967d3eabf7c)
 
 _Picture 6: New User Ubuntu_
 
-![](RackMultipart20230721-1-vmnkbr_html_ebfdc161ce99141e.png)
+![Picture7](https://github.com/NoahSyler/blog/assets/99105291/24568eb4-24c0-493a-a5f3-fd9b7d6b2144)
 
 _Picture 7: Public Key added to Ubuntu_
 
-![](RackMultipart20230721-1-vmnkbr_html_d2deffc0ddc6d7a.png)
+![Picture8](https://github.com/NoahSyler/blog/assets/99105291/c4483ee4-279c-43a0-ad90-d823d264823e)
 
 _Picture 8: Uploading Program with SFTP_
 
-![](RackMultipart20230721-1-vmnkbr_html_4f115290e332233d.png)
+![Picture9](https://github.com/NoahSyler/blog/assets/99105291/947796e6-eb09-4d63-b96e-64736632ecee)
 
 _Picture 9: Application Directory and Nginx var logs_
 
-![](RackMultipart20230721-1-vmnkbr_html_c3d2e55f1b2d240d.png)
+![Picture10](https://github.com/NoahSyler/blog/assets/99105291/3160acb4-78dc-4968-b5f9-15c93fc10b6e)
 
 _Picture 10: Gunicorn and Nginx Process Logs_
 
-![](RackMultipart20230721-1-vmnkbr_html_2346811b045b7ad2.png)
+![Picture11](https://github.com/NoahSyler/blog/assets/99105291/455d7f14-5bd8-4dda-a1c9-9ecbf6ec24d8)
 
 _Picture 11: Gunicorn Socket Logs_
 
-![](RackMultipart20230721-1-vmnkbr_html_c8cfc8844672ca89.png)
+![Picture12](https://github.com/NoahSyler/blog/assets/99105291/0c763f60-9787-4b9f-97dc-cf6f076e6b68)
 
 _Picture 12: MySQL Options_
 
-![](RackMultipart20230721-1-vmnkbr_html_ec3839947c2b1a8e.png)
+![Picture13](https://github.com/NoahSyler/blog/assets/99105291/12a0e3fc-97bc-4df4-8eb1-3d4c72a1ae88)
 
 _Picture 13: Models Displaying Schema Configuration_
 
-![](RackMultipart20230721-1-vmnkbr_html_89bf9f559ba3f9d5.png)
+![Picture14](https://github.com/NoahSyler/blog/assets/99105291/807326aa-5bf4-4d73-9fac-a5bb31899775)
 
 _Picture 14: Admin Page Overview_
 
-![](RackMultipart20230721-1-vmnkbr_html_8819b7f5195e9157.png)
+![Picture15](https://github.com/NoahSyler/blog/assets/99105291/ba39bd55-e037-4a8b-9166-c6c55b3f632e)
 
 _Picture 15: Admin Page View for Single Table_
 
-![](RackMultipart20230721-1-vmnkbr_html_db46798ac1b0eb04.png)
+![Picture16](https://github.com/NoahSyler/blog/assets/99105291/a7175916-3dc3-4258-b5a1-b2571fc96f11)
 
 _Picture 16: AWS MySQL_
 
-![](RackMultipart20230721-1-vmnkbr_html_13f7ffb27144c8bb.png)
+![Picture17](https://github.com/NoahSyler/blog/assets/99105291/b728e992-1f41-493e-b707-281c18ca8d7c)
 
 _Picture 17: MySQL Info_
 
-![](RackMultipart20230721-1-vmnkbr_html_f9a15c0e3a3b750e.png)
+![Picture18](https://github.com/NoahSyler/blog/assets/99105291/67414c3a-025e-45d8-a902-4a12abe65fdd)
 
 _Picture 18: Blog Index Page_
 
-# ![](RackMultipart20230721-1-vmnkbr_html_ba0d09f9da9099ec.png)
+![Picture19](https://github.com/NoahSyler/blog/assets/99105291/fbdd818b-eb00-471d-8d1b-bb3f9af3bf07)
 
 _Picture 19: Admin Login_
 
-![](RackMultipart20230721-1-vmnkbr_html_d45be1dac3458ca0.png)
+![Picture20](https://github.com/NoahSyler/blog/assets/99105291/75e80413-d5ad-4f9c-8b5d-03ee3b6fadc6)
 
 _Picture 20: Admin Denied Access Through Port 80_
 
-# ![](RackMultipart20230721-1-vmnkbr_html_28b8b2e91726c500.png)
+![Picture21](https://github.com/NoahSyler/blog/assets/99105291/b2343515-ab5e-4b5e-9f36-86d4fa3f742a)
 
 _Picture 21: Site Denied Access Through Port 8088_
 
@@ -268,3 +270,8 @@ The internet protocols have truly revolutionized how we connect to the world. Th
 | [1] | Mozilla, "What is a web server?," MDN Web Docs, [Online]. Available: https://developer.mozilla.org/en-US/docs/Learn/Common\_questions/Web\_mechanics/What\_is\_a\_web\_server. [Accessed 26 June 2023]. |
 | --- | --- |
 | [2] | Real Python, "Web Applications & Frameworks," [Online]. Available: https://docs.python-guide.org/scenarios/web/. [Accessed 26 June 2023]. |
+
+
+
+
+[Abstract](#abstract)
